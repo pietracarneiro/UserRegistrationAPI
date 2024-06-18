@@ -1,0 +1,16 @@
+﻿# Arquivos e diretórios a serem ignorados pelo Git
+
+# Arquivos de compilação e build
+bin/
+obj/
+
+# Arquivos de configuração do Visual Studio
+.vs/
+
+# Arquivos de log e caches
+*.log
+*.cache
+
+# Arquivos específicos (substitua pelos nomes dos arquivos que deseja ignorar)
+config.txt
+sensitive-data.csv
