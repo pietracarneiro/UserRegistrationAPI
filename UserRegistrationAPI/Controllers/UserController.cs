@@ -125,5 +125,20 @@ namespace UserRegistrationAPI.Controllers
         {
             return _context.Users.Any(u => u.Id == id);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound("Usuário não encontrado");
+            }
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
